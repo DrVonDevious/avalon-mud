@@ -1,24 +1,23 @@
-error_entity = None
-
+import colors
 from entity import Entity
 
 error_entity = Entity(
     char="X",
-    color=(255, 0, 0),
-    name="Error",
+    color=colors.red,
+    name="<Unknown Entity>",
     entity_id="ffff",
 )
 
 player = Entity(
     char="@",
-    color=(255, 255, 255),
+    color=colors.white,
     name="Sam",
     entity_id="0001",
 )
 
 pine_tree = Entity(
     char="t",
-    color=(150, 200, 0),
+    color=colors.green,
     name="Pine Tree",
     entity_id="0002",
 )
