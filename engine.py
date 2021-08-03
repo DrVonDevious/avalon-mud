@@ -1,9 +1,11 @@
 from typing import Iterable, Any
 
+
 from tcod.context import Context
 from tcod.console import Console
 from tcod.map import compute_fov
 
+from render_functions import render_hp_bar, render_map_editor
 from entity import Entity
 from game_map import GameMap
 from input_handlers import EventHandler
@@ -41,6 +43,15 @@ class Engine:
 
     def render(self, console: Console, context: Context) -> None:
         self.game_map.render(console)
+
+        render_hp_bar(
+            console=console,
+            current_value=60,
+            maximum_value=100,
+            total_width=20
+        )
+
+        render_map_editor(console)
 
         context.present(console)
 
